@@ -60,7 +60,7 @@ module.exports = {
       return res.status(500).json(err);
     }
   },
-  // Delete a student and remove them from the course
+  // Delete a user and remove them from the thought
   async deleteUser(req, res) {
     try {
       const user = await User.findOneAndRemove({ _id: req.params.userId });
@@ -69,11 +69,11 @@ module.exports = {
         return res.status(404).json({ message: 'No such user exists' });
       }
 
-      // const thoughtText = await Thought.findOneAndUpdate(
-      //   { users: req.params.userId },
-      //   { $pull: { users: req.params.userId } },
-      //   { new: true }
-      // );
+      const thoughtText = await Thought.findOneAndUpdate(
+        { users: req.params.userId },
+        { $pull: { users: req.params.userId } },
+        { new: true }
+      );
 
       if (!thoughtText) {
         return res.status(404).json({
@@ -88,7 +88,7 @@ module.exports = {
     }
   },
 
-  // Add a reaction to a user
+  // Add a friend to a user
   async addFriend(req, res) {
    
     try {
