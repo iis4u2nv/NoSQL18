@@ -17,7 +17,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 The following video show the web application's appearance and functionality:
 
-video link will go here
+https://drive.google.com/file/d/1xI71KDGlOV9bQXUJX03s3JQRwKsEUiQa/view
 
 
 
